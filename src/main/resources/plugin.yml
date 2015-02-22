@@ -1,0 +1,3 @@
+name: SpudDoubleJump
+main: rocks.spud.server.doublejump.DoubleJumpPlugin
+version: ${project.version}

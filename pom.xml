@@ -21,6 +21,7 @@
 	<groupId>rocks.spud.server</groupId>
 	<artifactId>doublejump</artifactId>
 	<version>1.0-SNAPSHOT</version>
+	<packaging>bukkit-plugin</packaging>
 
 	<!-- Dependencies -->
 	<repositories>
@@ -54,28 +55,18 @@
 		<finalName>SpudDoubleJump-${project.version}</finalName>
 		<defaultGoal>clean package</defaultGoal>
 
-		<resources>
-			<!-- plugin.yml -->
-			<resource>
-				<directory>${project.basedir}/src/main/resources</directory>
-				<targetPath>.</targetPath>
-				<filtering>true</filtering>
-
-				<includes>
-					<include>plugin.yml</include>
-				</includes>
-			</resource>
-		</resources>
-
 		<plugins>
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.2</version>
+				<groupId>io.github.lordakkarin.maven</groupId>
+				<artifactId>bukkit-maven-plugin</artifactId>
+				<extensions>true</extensions>
+				<version>1.0-SNAPSHOT</version>
 
 				<configuration>
-					<source>${java.version}</source>
-					<target>${java.version}</target>
+					<plugin>
+						<name>SpudDoubleJump</name>
+						<mainClass>rocks.spud.server.doublejump.DoubleJumpPlugin</mainClass>
+					</plugin>
 				</configuration>
 			</plugin>
 		</plugins>
